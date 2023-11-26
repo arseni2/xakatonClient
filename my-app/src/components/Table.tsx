@@ -1,4 +1,3 @@
-import React from 'react';
 import TableItem from "./TableItem";
 import Input from "../share-components/Input";
 import Dropdown from "../share-components/Dropdown";

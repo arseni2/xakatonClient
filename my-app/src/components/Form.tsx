@@ -1,13 +1,7 @@
-import React, {useState} from 'react';
-import DropZone from "./DropZone";
-import Input from "../share-components/Input";
-import ButtonPrimary from "../share-components/ButtonPrimary";
-import {sendFormAPI} from "../api/api";
-
 type propsType = {
     setData: (data: FileList | null) => void
 }
-const Form = (props: propsType) => {
+const Form = () => {
     // const [borrower, setBorrower] = useState<string>('')
     //
     // const [coBorrower, setCoBorrower] = useState<string>()
@@ -22,7 +16,7 @@ const Form = (props: propsType) => {
     // const [passport, setPassport] = useState<FileList | null>(null)
     // const [moneyData, setMoneyData] = useState<FileList | null>()
     // const [otherDoc, setOtherDoc] = useState<FileList | null>()
-    const [clientData, setCLientData] = useState<FileList | null>()
+    //const [clientData, setCLientData] = useState<FileList | null>()
 
     // const borrowerChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     //     setBorrower(e.target.value)

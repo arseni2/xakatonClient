@@ -1,5 +1,3 @@
-import React from 'react';
-
 const ButtonPrimary = (props: any) => {
     const { children, className} = props
     return (

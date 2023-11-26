@@ -5,6 +5,6 @@ const instance = axios.create({
     baseURL: 'http://localhost:8000',
 });
 
-export const sendFormAPI = (data: any) => {
+export const sendFormAPI = () => {
     instance.post('/api/documents/process/', {}).then()
 }

@@ -1,6 +1,3 @@
-type propsType = {
-    setData: (data: FileList | null) => void
-}
 const Form = () => {
     // const [borrower, setBorrower] = useState<string>('')
     //

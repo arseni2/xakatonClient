@@ -11,7 +11,9 @@ function App() {
         const reader = new FileReader();
 
         reader.onload = (event) => {
+            //@ts-ignore
             const data = new Uint8Array(event.target?.result);
+            //@ts-ignore
             if(data) {
                 const workbook = XLSX.read(data, { type: 'array' });
 

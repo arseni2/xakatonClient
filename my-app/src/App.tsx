@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import * as XLSX from 'xlsx';
 import Table from './components/Table';
 import DropZone from './components/DropZone';
@@ -6,24 +6,28 @@ import DropZone from './components/DropZone';
 function App() {
     const [data, setData] = useState<any[]>([]);
 
-    const handleFileUpload = (e) => {
+    const handleFileUpload = (e: any) => {
         const file = e.target.files[0];
         const reader = new FileReader();
 
         reader.onload = (event) => {
-            const data = new Uint8Array(event.target.result);
-            const workbook = XLSX.read(data, { type: 'array' });
+            const data = new Uint8Array(event.target?.result);
+            if(data) {
+                const workbook = XLSX.read(data, { type: 'array' });
 
-            const sheetName = workbook.SheetNames[0];
-            const sheet = workbook.Sheets[sheetName];
+                const sheetName = workbook.SheetNames[0];
+                const sheet = workbook.Sheets[sheetName];
 
-            const jsonData = XLSX.utils.sheet_to_json(sheet);
+                const jsonData = XLSX.utils.sheet_to_json(sheet);
 
-            if (jsonData.length > 0) {
-                setData(jsonData);
-            } else {
-                console.log('Empty file or unable to parse.');
+                if (jsonData.length > 0) {
+                    setData(jsonData);
+                } else {
+                    console.log('Empty file or unable to parse.');
+                }
             }
+
+
         };
 
         reader.readAsArrayBuffer(file);

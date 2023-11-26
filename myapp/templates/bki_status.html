@@ -1,0 +1,25 @@
+<!-- templates/bki_status.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BKI Status</title>
+</head>
+<body>
+    <h1>BKI Status</h1>
+    <p>{{ message }}</p>
+
+    {% if bki_status %}
+        <p>Score: {{ score }}</p>
+        <p>Obligations:</p>
+        <ul>
+            {% for obligation in obligations %}
+                <li>Type: {{ obligation.type }}, Status: {{ obligation.status }}, Amount: {{ obligation.amount }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
